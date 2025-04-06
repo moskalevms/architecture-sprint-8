@@ -6,6 +6,10 @@ WORKDIR /app
 COPY gradle ./gradle
 COPY gradlew build.gradle.kts settings.gradle.kts ./
 
+RUN chmod +x ./gradlew
+
+RUN ls -l
+
 RUN ./gradlew dependencies --no-daemon
 
 COPY src ./src
